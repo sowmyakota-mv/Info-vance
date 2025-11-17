@@ -1,5 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react" // ✅ Fixed import
 import './App.css'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
@@ -32,49 +32,49 @@ import UXUIDesignMasterclass from './pages/UXUXDesignMasterClass'
 import DigitalMarketingSEO from './pages/DigitalMarketingSEO'
 
 function App() {
-
   return (
     <>
-    <Router>
-      {/* ✅ No horizontal scroll, normal vertical scroll */}
-      <div className="w-full min-h-screen overflow-x-hidden overflow-y-hidden relative">
-      <ScrollToTop/>
-    <Header/>
-     <Routes>
-        <Route path="/" element={
-          <div>
-            <Analytics />
-      <HeroSection/>
-      <AboutSection/>
-      <ServicesSection/>
-      <WhyChooseUs/>
-      <Testimonials/>
-      <StatsSection/>
-      <ContactSection/>
-      </div>}/>
-      <Route path='/innovation' element={<Innovation/>}/>
-      <Route path='/innovation/case-studies' element={<CaseStudiesPage/>}/>
-      <Route path='/innovation-lab' element={<InnovationLab/>}/>
-      <Route path='/solutions' element={<Solutions/>}/>
-      <Route path='/trainings' element={<Trainings/>}/>
-      <Route path='trainings/full-stack-development' element={<FullStackDevelopment/>}/>
-      <Route path='/trainings/ai-ml' element={<AiAndMl/>}/>
-      <Route path='/trainings/data-analytics' element={<DataAnalytics/>}/>
-      <Route path='/trainings/corporate-upskilling' element={<CorporateUpskilling/>}/>
-      <Route path='/trainings/graduate-internship' element={<GraduateInternship/>}/>
-      <Route path='/trainings/career-accelerator' element={<CareerAccelerator/>}/>
-      <Route path='/insights' element={<Insights/>}/>
-      <Route path='/connect' element={<Connect/>}/>
-      <Route path='/about-infovance' element={<About/>}/>
-      <Route path='/insights-details' element={<InsightsDetails/>}/>
-      <Route path='/trainings/cloud-devops' element={<CloudAndDevops/>}/>\
-      <Route path='/trainings/cybersecurity' element={<CybersecurityFundamentals/>}/>
-      <Route path='/trainings/ui-ux' element={<UXUIDesignMasterclass/>}/>
-      <Route path='/trainings/digital-marketing' element={<DigitalMarketingSEO/>}/>
-      </Routes>
-      <Footer/>
-      </div>
-    </Router>
+      <Router>
+        {/* ✅ No horizontal scroll, normal vertical scroll */}
+        <div className="w-full min-h-screen overflow-x-hidden overflow-y-hidden relative">
+          <ScrollToTop/>
+          <Header/>
+          <Routes>
+            <Route path="/" element={
+              <div>
+                <Analytics /> {/* ✅ Now using React version */}
+                <HeroSection/>
+                <AboutSection/>
+                <ServicesSection/>
+                <WhyChooseUs/>
+                <Testimonials/>
+                <StatsSection/>
+                <ContactSection/>
+              </div>
+            }/>
+            <Route path='/innovation' element={<Innovation/>}/>
+            <Route path='/innovation/case-studies' element={<CaseStudiesPage/>}/>
+            <Route path='/innovation-lab' element={<InnovationLab/>}/>
+            <Route path='/solutions' element={<Solutions/>}/>
+            <Route path='/trainings' element={<Trainings/>}/>
+            <Route path='trainings/full-stack-development' element={<FullStackDevelopment/>}/>
+            <Route path='/trainings/ai-ml' element={<AiAndMl/>}/>
+            <Route path='/trainings/data-analytics' element={<DataAnalytics/>}/>
+            <Route path='/trainings/corporate-upskilling' element={<CorporateUpskilling/>}/>
+            <Route path='/trainings/graduate-internship' element={<GraduateInternship/>}/>
+            <Route path='/trainings/career-accelerator' element={<CareerAccelerator/>}/>
+            <Route path='/insights' element={<Insights/>}/>
+            <Route path='/connect' element={<Connect/>}/>
+            <Route path='/about-infovance' element={<About/>}/>
+            <Route path='/insights-details' element={<InsightsDetails/>}/>
+            <Route path='/trainings/cloud-devops' element={<CloudAndDevops/>}/>
+            <Route path='/trainings/cybersecurity' element={<CybersecurityFundamentals/>}/>
+            <Route path='/trainings/ui-ux' element={<UXUIDesignMasterclass/>}/>
+            <Route path='/trainings/digital-marketing' element={<DigitalMarketingSEO/>}/>
+          </Routes>
+          <Footer/>
+        </div>
+      </Router>
     </> 
   )
 }
