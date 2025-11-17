@@ -1,4 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import { Analytics } from "@vercel/analytics/next"
 import './App.css'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
@@ -42,6 +43,7 @@ function App() {
      <Routes>
         <Route path="/" element={
           <div>
+            <Analytics />
       <HeroSection/>
       <AboutSection/>
       <ServicesSection/>
